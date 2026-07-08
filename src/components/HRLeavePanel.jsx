@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 // import "./GetEmployee.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function HRLeavePanel() {
   const [leaves, setLeaves] = useState([]);
   const [searchId, setSearchId] = useState("");
 
   const fetchMasterData = async () => {
     try {
-      let url = "https://hrm-backend-4dan.onrender.com/leaves/hr/all";
+      let url = `${API_URL}/leaves/hr/all`;
       // If user typed an ID, use employee route context natively
       if (searchId.trim() !== "") {
-        url = `http://localhost:8084/leaves/employee/${searchId}`;
+        url = `${API_URL}/leaves/employee/${searchId}`;
       }
       const response = await fetch(url);
       const data = await response.json();
@@ -26,7 +26,7 @@ function HRLeavePanel() {
 
   const processStatus = async (id, decision) => {
     try {
-      const response = await fetch(`https://hrm-backend-4dan.onrender.com/leaves/hr/review/${id}?status=${decision}`, {
+      const response = await fetch(`${API_URL}/leaves/hr/review/${id}?status=${decision}`, {
         method: "PUT"
       });
       if (response.ok) {

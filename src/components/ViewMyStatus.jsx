@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function ViewMyStatus() {
   const [myLeaves, setMyLeaves] = useState([]);
@@ -10,7 +11,7 @@ function ViewMyStatus() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch(`https://hrm-backend-4dan.onrender.com/leaves/employee/${mockId}`);
+      const response = await fetch(`${API_URL}/leaves/employee/${mockId}`);
       const data = await response.json();
       setMyLeaves(data);
     } catch (error) {
@@ -30,7 +31,7 @@ function ViewMyStatus() {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8084/leaves/update/${editForm.id}`, {
+      const response = await fetch(`${API_URL}/leaves/update/${editForm.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editForm)

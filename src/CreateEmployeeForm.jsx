@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
 
 import './CreateEmployeeForm.css';
 function CreateEmployeeForm(){
@@ -21,7 +22,7 @@ function CreateEmployeeForm(){
        e.preventDefault();
 
        try {
-        const response=await fetch("https://hrm-backend-4dan.onrender.com/employees/add",{
+        const response=await fetch(`${API_URL}/employees/add`,{
             method:'POST',
             headers:{
           'Content-Type': 'application/json', // Tells the backend we are sending JSON data

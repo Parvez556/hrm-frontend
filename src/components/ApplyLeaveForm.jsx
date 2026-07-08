@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./GetEmployee.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function ApplyLeaveForm() {
   const [formData, setFormData] = useState({
     employeeId: 1, // Simulating logged-in session ID
@@ -18,7 +18,7 @@ function ApplyLeaveForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://hrm-backend-4dan.onrender.com/leaves/apply", {
+      const response = await fetch(`${API_URL}/leaves/apply`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
