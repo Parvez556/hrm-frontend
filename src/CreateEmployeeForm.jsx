@@ -21,7 +21,7 @@ function CreateEmployeeForm(){
        e.preventDefault();
 
        try {
-        const response=await fetch("http://localhost:8084/employees/add",{
+        const response=await fetch("https://hrm-backend-4dan.onrender.com/employees/add",{
             method:'POST',
             headers:{
           'Content-Type': 'application/json', // Tells the backend we are sending JSON data
