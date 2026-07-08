@@ -10,7 +10,7 @@ function ViewMyStatus() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch(`http://localhost:8084/leaves/employee/${mockId}`);
+      const response = await fetch(`https://hrm-backend-4dan.onrender.com/leaves/employee/${mockId}`);
       const data = await response.json();
       setMyLeaves(data);
     } catch (error) {

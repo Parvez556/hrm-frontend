@@ -32,7 +32,7 @@ function GetEmployee() {
   const deleteEmployee = async (id) => {
     if (window.confirm("Are you sure you want to delete this employee?")) {
       try {
-        const response = await fetch(`http://localhost:8084/employees/delete/${id}`, { method: "DELETE" });
+        const response = await fetch(`https://hrm-backend-4dan.onrender.com/employees/delete/${id}`, { method: "DELETE" });
         if (response.ok) {
           alert("Employee deleted successfully!");
           handleClick(); 
@@ -67,7 +67,7 @@ function GetEmployee() {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault(); 
     try {
-      const response = await fetch(`http://localhost:8084/employees/update/${editId}`, {
+      const response = await fetch(`https://hrm-backend-4dan.onrender.com/employees/update/${editId}`, {
         method: "PUT", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData), 

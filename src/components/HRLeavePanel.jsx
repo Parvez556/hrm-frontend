@@ -7,7 +7,7 @@ function HRLeavePanel() {
 
   const fetchMasterData = async () => {
     try {
-      let url = "http://localhost:8084/leaves/hr/all";
+      let url = "https://hrm-backend-4dan.onrender.com/leaves/hr/all";
       // If user typed an ID, use employee route context natively
       if (searchId.trim() !== "") {
         url = `http://localhost:8084/leaves/employee/${searchId}`;
@@ -26,7 +26,7 @@ function HRLeavePanel() {
 
   const processStatus = async (id, decision) => {
     try {
-      const response = await fetch(`http://localhost:8084/leaves/hr/review/${id}?status=${decision}`, {
+      const response = await fetch(`https://hrm-backend-4dan.onrender.com/leaves/hr/review/${id}?status=${decision}`, {
         method: "PUT"
       });
       if (response.ok) {

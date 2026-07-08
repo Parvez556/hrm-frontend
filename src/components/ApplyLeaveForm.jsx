@@ -18,7 +18,7 @@ function ApplyLeaveForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8084/leaves/apply", {
+      const response = await fetch("https://hrm-backend-4dan.onrender.com/leaves/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
