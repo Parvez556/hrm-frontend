@@ -1,0 +1,74 @@
+/* Form Container Style */
+.form-container {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 2px solid #f1f3f5;
+  padding-bottom: 10px;
+}
+
+/* Form Layout Rows */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #495057;
+  text-transform: capitalize; /* labels ko properly capitalize karega */
+}
+
+/* Inputs Styling */
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box; /* Padding ko width ke andar manage karega */
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Submit Button Style */
+.btn-submit {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+.btn-submit:active {
+  transform: scale(0.98); /* Click karne par chota sa bounce effect */
+}
