@@ -16,7 +16,7 @@ function GetEmployee() {
   // GET ALL EMPLOYEES
   const handleClick = async () => {
     try {
-      const response = await fetch(`${API_URL}/employees/allEmployees`); 
+      const response = await fetch(`https://hrm-backend-4dan.onrender.com/employees/allEmployees`); 
       const data = await response.json();
       setEmployees(data); 
     } catch (error) {
